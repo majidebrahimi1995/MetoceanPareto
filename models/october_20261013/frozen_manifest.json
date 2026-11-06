@@ -1,0 +1,418 @@
+{
+  "experiment": {
+    "version": 2,
+    "status": "development_only",
+    "split_kind": "joint",
+    "split_specs": {
+      "11": {
+        "environment": [
+          "6|6",
+          "9|10",
+          "9|6",
+          "9|4",
+          "6|18"
+        ],
+        "control": [
+          "10|3",
+          "25|2.5",
+          "25|4",
+          "-25|0.5",
+          "0|1",
+          "20|3",
+          "-20|1.5",
+          "25|3",
+          "-5|2.5",
+          "-10|3"
+        ]
+      },
+      "22": {
+        "environment": [
+          "9|10",
+          "4|4",
+          "5|16",
+          "8|4",
+          "4|10"
+        ],
+        "control": [
+          "15|3",
+          "15|2",
+          "25|0.5",
+          "25|4",
+          "-15|0",
+          "5|1.5",
+          "-15|0.5",
+          "-5|2.5",
+          "15|4",
+          "0|0"
+        ]
+      },
+      "33": {
+        "environment": [
+          "4|8",
+          "8|6",
+          "8|14",
+          "8|10",
+          "4|6"
+        ],
+        "control": [
+          "0|4",
+          "10|0",
+          "-15|1.5",
+          "5|0",
+          "-10|2",
+          "-20|2",
+          "20|4",
+          "-15|2.5",
+          "-25|2.5",
+          "5|2.5"
+        ]
+      },
+      "44": {
+        "environment": [
+          "6|18",
+          "8|14",
+          "8|8",
+          "9|16",
+          "7|14"
+        ],
+        "control": [
+          "-5|1.5",
+          "-5|2",
+          "-15|1.5",
+          "-5|3",
+          "10|2",
+          "-10|0.5",
+          "-10|2",
+          "25|3",
+          "5|1",
+          "10|1"
+        ]
+      },
+      "55": {
+        "environment": [
+          "9|16",
+          "4|18",
+          "5|4",
+          "8|18",
+          "7|4"
+        ],
+        "control": [
+          "10|0.5",
+          "-20|0.5",
+          "25|1.5",
+          "-25|3.5",
+          "20|0.5",
+          "-20|4",
+          "-20|3",
+          "-15|3.5",
+          "0|2",
+          "-10|4"
+        ]
+      }
+    },
+    "seeds": [
+      11,
+      22,
+      33,
+      44,
+      55
+    ],
+    "models": [
+      "tanh256"
+    ],
+    "modes": [
+      "avg9"
+    ],
+    "epochs": 2000,
+    "sea_base_candidate": "tanh256",
+    "source_sha256": {
+      "master": "eee62320373b194350cac68f1b7c70f0ba119a13372c9597c9b225a919dc3cce",
+      "wind": "21396ad46cf75bb71ece354f12f136c8c928063a75741a5714220813ef7e89ba",
+      "sea": "edb4cb34bf4d06a1ff5aac8e5726bdfb3f35b4abc18338955c9bc47c9f797d82"
+    },
+    "source_paths": {
+      "master": "/global-scratch/bulk_pool/mebrahimi/zero_model/Main_model/surrogate/data/MASTER_WD0to350_SEED_AVERAGED_4OUTPUTS_WITH_CRITICAL_LINE.csv",
+      "wind": "/global-scratch/bulk_pool/mebrahimi/zero_model/Main_model/surrogate/data/wind_characteristics_avg9_with_points.csv",
+      "sea": "/global-scratch/bulk_pool/mebrahimi/zero_model/Main_model/surrogate/data/DEL_WD0to350_7SeaStates_Homogeneous_TI4to14_CORRECTED.xlsx"
+    },
+    "code_sha256": {
+      "benchmark.py": "8392b059ef04dcaa8c54d5ee99a68b5acb81195134b3b033b2474475c3005ec2",
+      "vendor/surrogate_core.py": "97781ba6442a3b2ef696d85c5f74aa8039c881ce8a730195ef89177cccfe3c32",
+      "vendor/train_sea_residual.py": "82b8227a573bbdc6849d002555f9b6ce2cf60fdb3b514d86fb822af6948653c1",
+      "vendor/train_smooth_del.py": "a8714b2a67ed184b345c46547fc82240971826e2817e9c5b209c1bbe8d2ea2af"
+    },
+    "feature_assumptions": "Legacy 120-degree rotation/reflection including unchanged yaw. Not independently verified.",
+    "ti_definition": "Mean of nine pointwise longitudinal TI percentages, then mean over six seeds",
+    "tasks": [
+      {
+        "stage": "base",
+        "mode": "avg9",
+        "seed": 11,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 11,
+        "candidate": "none"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 11,
+        "candidate": "poly3"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 11,
+        "candidate": "tanh32"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 11,
+        "candidate": "tanh64"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 11,
+        "candidate": "tanh128"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 11,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "base",
+        "mode": "avg9",
+        "seed": 22,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 22,
+        "candidate": "none"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 22,
+        "candidate": "poly3"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 22,
+        "candidate": "tanh32"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 22,
+        "candidate": "tanh64"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 22,
+        "candidate": "tanh128"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 22,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "base",
+        "mode": "avg9",
+        "seed": 33,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 33,
+        "candidate": "none"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 33,
+        "candidate": "poly3"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 33,
+        "candidate": "tanh32"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 33,
+        "candidate": "tanh64"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 33,
+        "candidate": "tanh128"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 33,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "base",
+        "mode": "avg9",
+        "seed": 44,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 44,
+        "candidate": "none"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 44,
+        "candidate": "poly3"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 44,
+        "candidate": "tanh32"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 44,
+        "candidate": "tanh64"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 44,
+        "candidate": "tanh128"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 44,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "base",
+        "mode": "avg9",
+        "seed": 55,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 55,
+        "candidate": "none"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 55,
+        "candidate": "poly3"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 55,
+        "candidate": "tanh32"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 55,
+        "candidate": "tanh64"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 55,
+        "candidate": "tanh128"
+      },
+      {
+        "stage": "sea",
+        "mode": "avg9",
+        "seed": 55,
+        "candidate": "tanh256"
+      },
+      {
+        "stage": "sea_gap",
+        "mode": "avg9",
+        "seed": 31,
+        "candidate": "none"
+      },
+      {
+        "stage": "sea_gap",
+        "mode": "avg9",
+        "seed": 31,
+        "candidate": "poly3"
+      },
+      {
+        "stage": "sea_gap",
+        "mode": "avg9",
+        "seed": 31,
+        "candidate": "tanh32"
+      },
+      {
+        "stage": "sea_gap",
+        "mode": "avg9",
+        "seed": 31,
+        "candidate": "tanh64"
+      },
+      {
+        "stage": "sea_gap",
+        "mode": "avg9",
+        "seed": 31,
+        "candidate": "tanh128"
+      },
+      {
+        "stage": "sea_gap",
+        "mode": "avg9",
+        "seed": 31,
+        "candidate": "tanh256"
+      }
+    ]
+  },
+  "base_fit": {
+    "fit_seconds": 445.39467380940914,
+    "model_bytes": 1028551,
+    "warnings": [],
+    "n_iter": 757,
+    "sklearn": "1.4.2",
+    "numpy": "1.26.4",
+    "predict_single_us_median": 72.769,
+    "trainable_parameters": 43716,
+    "sea_fit": {
+      "fit_seconds": 42.85008105635643,
+      "model_bytes": 129232,
+      "warnings": [],
+      "n_iter": 849,
+      "sklearn": "1.4.2",
+      "numpy": "1.26.4",
+      "predict_single_us_median": 65.271,
+      "trainable_parameters": 5124
+    }
+  },
+  "base_sha256": "5260b2f50857f53f60a83faae56a210a251e3f51d9b684ab2456421c341ae679",
+  "sea_sha256": "2f57f175b33358c58fa03eb480b3b4165a66a5c2d8ba174971c00ef8f55c9676",
+  "next_step": "New independent simulations after all choices are frozen. Existing FAST.Farm cases are historical diagnostics."
+}

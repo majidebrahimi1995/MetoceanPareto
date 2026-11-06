@@ -1,0 +1,9 @@
+# Python 3.11; versions recorded from the working cluster environment.
+numpy==1.26.4
+scipy==1.11.4
+pandas==2.2.3
+scikit-learn==1.4.2
+joblib==1.5.3
+py-wake==2.6.20
+pymoo==0.6.1.5
+matplotlib==3.10.9

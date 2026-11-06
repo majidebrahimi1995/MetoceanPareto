@@ -1,0 +1,45 @@
+{
+  "main": ".",
+  "bundle": "surrogate/smooth_del_v1",
+  "base_model": "models/october_20261013/base.joblib",
+  "sea_model": "models/october_20261013/sea.joblib",
+  "runner": "surrogate/smooth_del_v1/run_pywake_sea_surrogate.py",
+  "population": 96,
+  "generations": 120,
+  "checkpoints": [
+    40,
+    80,
+    120
+  ],
+  "seeds": [
+    1103,
+    2207,
+    3301
+  ],
+  "de_maxiter": 100,
+  "de_popsize": 8,
+  "budgets": [
+    0.03,
+    0.06
+  ],
+  "taus": [
+    1,
+    1.025,
+    1.05
+  ],
+  "yaw_bounds": [
+    -20,
+    20
+  ],
+  "pitch_bounds": [
+    0,
+    3
+  ],
+  "feasibility_tolerance": 1e-07,
+  "rho_bal": 0.05,
+  "payoff_floor": 0.002,
+  "invalid_fraction_abort": 0.8,
+  "parity_rtol": 1e-06,
+  "parity_atol": 1e-07,
+  "pywake_runner": "pywake/bin/run_frozen_pywake_case.py"
+}

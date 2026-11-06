@@ -1,0 +1,182 @@
+{
+  "schema": "absolute_openfast_3d_seeded_all_data_refit_v1",
+  "all_data_refit": true,
+  "optimization_variant": "seeded_incumbent_guard_absolute3d",
+  "number_of_rows": 1176,
+  "number_of_physical_groups": 84,
+  "wake_model": "zong",
+  "rotor_average_model": "gaussian_overlap",
+  "yaw_sign": 1,
+  "tilt_mode": "six_plus_csv",
+  "fixed_tilt_deg": 6.0,
+  "tilt_iterations": 2,
+  "diameter_m": 240.0,
+  "hub_height_m": 150.0,
+  "rho_kg_m3": 1.225,
+  "absolute_3d_table": "/global-scratch/bulk_pool/mebrahimi/zero_model/Main_model/pywake/calibration/openfast_turbine_calibration/openfast_absolute_3d_TI6/openfast_absolute_3d_pywake_table_TI6_PROJECTED_CT_BOUNDED.csv",
+  "absolute_3d_table_sha256": "bf813b079c40d0aed25a6fc423443833452c9de8536a6864df594adeef6e7782",
+  "absolute_3d_inputs": [
+    "ws",
+    "pitch_offset_deg",
+    "yaw"
+  ],
+  "absolute_3d_power": "OpenFAST mean_RotPwr",
+  "absolute_3d_ct_for_wake": "OpenFAST mean_RtFldCt * cos(yaw_command)^2",
+  "simple_yaw_model": false,
+  "density_scale": true,
+  "platform_tilt_table": "/global-scratch/bulk_pool/mebrahimi/zero_model/Main_model/pywake/data/pitch_ct_tilt_map.csv",
+  "platform_tilt_table_sha256": "319d4fb889252ed65a25339affe84ded6fe9d20c25d41fb5ba6f6c33d52df4c8",
+  "data": "/global-scratch/bulk_pool/mebrahimi/zero_model/Main_model/pywake/calibration/openfast_turbine_calibration/absolute3d_full_wfm_1176/00_filtered_Mild1176.csv",
+  "data_sha256": "0371646ac25f1fd0b414011a45ced37d4eb73fefee2a76e4596b58a2d422686a",
+  "column_mapping": {
+    "x1": "T1_X",
+    "y1": "T1_Y",
+    "x2": "T2_X",
+    "y2": "T2_Y",
+    "yaw1": "Yaw_T1",
+    "pitch1": "Pitch_T1",
+    "t1_ws": "T1_Mean_RotorEffectiveSpeed_mps",
+    "t2_ws": "T2_Mean_RotorEffectiveSpeed_mps",
+    "t1_ti_pct": "T1_TI_RotorEffective_pct",
+    "t2_ti_pct": "T2_TI_RotorEffective_pct",
+    "yaw2": "Yaw_T2",
+    "pitch2": "Pitch_T2",
+    "ambient_ws": "WS",
+    "ambient_ti_pct": "TI",
+    "wd_physical": "WD_physical_deg",
+    "rotation": "Rotation_deg",
+    "controller_row": "ControllerRowReference",
+    "group_id": "GroupID",
+    "sea_state": null,
+    "hs": null,
+    "tp": null
+  },
+  "physical_split_keys": [
+    "x1",
+    "y1",
+    "x2",
+    "y2",
+    "pywake_wd",
+    "ambient_ws",
+    "ambient_ti_pct",
+    "wd_physical",
+    "rotation"
+  ],
+  "incumbent_json": "/global-scratch/bulk_pool/mebrahimi/zero_model/Main_model/pywake/calibration/openfast_turbine_calibration/absolute3d_projectedCT_refit_seeded_40/pywake_absolute3d_calibration.json",
+  "incumbent_json_sha256": "9dee90856a59485b657985c556cb7b7b0a5d86ff0a93686c73889654b544dbde",
+  "incumbent_wake_parameters": [
+    0.038098318648636144,
+    0.25675581927227475,
+    0.5131835894281069
+  ],
+  "incumbent_crespo_c": [
+    3.5347227372668937,
+    0.8325,
+    0.0325,
+    -1.239771918092326
+  ],
+  "wake_parameter_names": [
+    "wake_k_effective",
+    "eps_coeff",
+    "deflection_scale"
+  ],
+  "wake_parameters": [
+    0.038565209616834906,
+    0.26173898814321817,
+    0.5022973850490038
+  ],
+  "wake_parameter_dict": {
+    "wake_k_effective": 0.038565209616834906,
+    "eps_coeff": 0.26173898814321817,
+    "deflection_scale": 0.5022973850490038
+  },
+  "crespo_c": [
+    3.502921997029202,
+    0.8325,
+    0.0325,
+    -1.2390406149296367
+  ],
+  "ws_objective_incumbent": 0.0007090218893845568,
+  "ws_objective_optimizer_candidate": 0.0007008075986657629,
+  "ws_optimizer_candidate_parameters": [
+    0.038565209616834906,
+    0.26173898814321817,
+    0.5022973850490038
+  ],
+  "ws_objective_final": 0.0007008075986657629,
+  "ws_incumbent_guard": "optimizer_candidate",
+  "ti_objective_incumbent": 0.9028337004595857,
+  "ti_objective_optimizer_candidate": 0.9021792331091254,
+  "ti_optimizer_candidate_c0_c3": [
+    3.502921997029202,
+    -1.2390406149296367
+  ],
+  "ti_objective_final": 0.9021792331091254,
+  "ti_incumbent_guard": "optimizer_candidate",
+  "all_data_ws_metrics": {
+    "n": 1176,
+    "bias_mps": 0.07319952012711976,
+    "mae_mps": 0.1213885266742169,
+    "rmse_mps": 0.17076797928474205,
+    "mean_abs_relative_error_pct": 1.8164957376431403,
+    "p95_abs_relative_error_pct": 5.865550722056262,
+    "max_abs_relative_error_pct": 8.220760657902213
+  },
+  "all_data_ti_metrics": {
+    "n": 1176,
+    "bias_percentage_points": -0.0268607419100185,
+    "mae_percentage_points": 0.6282242580512325,
+    "rmse_percentage_points": 0.9497362045563685,
+    "mean_abs_relative_error_pct": 7.636823844520698,
+    "p95_abs_error_percentage_points": 2.1021363604116656,
+    "max_abs_error_percentage_points": 4.897924050969184
+  },
+  "optimizer": {
+    "workers": 96,
+    "seed": 20260929,
+    "ws": {
+      "bounds": [
+        [
+          0.015,
+          0.12
+        ],
+        [
+          0.15,
+          0.6
+        ],
+        [
+          0.0,
+          1.5
+        ]
+      ],
+      "maxiter": 90,
+      "popsize": 30,
+      "tol": 1e-07,
+      "atol": 0.0,
+      "nfev": 4864,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "seconds": 7270.0273492001
+    },
+    "ti": {
+      "bounds": [
+        [
+          0.1,
+          6.0
+        ],
+        [
+          -2.0,
+          -0.05
+        ]
+      ],
+      "maxiter": 90,
+      "popsize": 44,
+      "tol": 1e-07,
+      "atol": 0.0,
+      "nfev": 2913,
+      "success": true,
+      "message": "Optimization terminated successfully.",
+      "seconds": 4015.596710257232
+    }
+  }
+}
